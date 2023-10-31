@@ -1,15 +1,11 @@
 module.exports = function(sequelize, DataTypes){
 
-    let alias = "Voter";
+    let alias = "Admin";
     let cols = {
         id:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
-        },
-        document:{
-            type: DataTypes.STRING(255),
-            allowNull: false
         },
         name:{
             type: DataTypes.STRING(255),
@@ -19,30 +15,22 @@ module.exports = function(sequelize, DataTypes){
             type: DataTypes.STRING(255),
             allowNull: false
         },
-        dob:{
-            type: DataTypes.DATE,
+        email:{
+            type: DataTypes.STRING(255),
             allowNull: false
         },
-        is_candidate:{
-            type: DataTypes.TINYINT(4),
+        password:{
+            type: DataTypes.STRING(255),
             allowNull: false
         },
     };
 
     let config = {
-        tableName: "Voter",
+        tableName: "Admin",
         timestamps: false
     }
 
-    let Voter = sequelize.define(alias, cols, config);
+    let Admin = sequelize.define(alias, cols, config);
 
-    Voter.associate = function(models){
-        
-        Voter.hasOne(models.Vote,
-            {
-                as: "Vote",
-                foreignKey: "voter_id",
-        });
-    }
-    return Voter;
+    return Admin;
 }
