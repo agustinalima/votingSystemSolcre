@@ -1,9 +1,10 @@
-const {getIndex} = require('../services/mainService');
+const fs = require("fs");
+const path = require("path");
 
 
 let mainController = {
   index: function (req, res){
-    getIndex(req,res);
+    res.send('Hola, esta funcionando');
   }
 };
 
