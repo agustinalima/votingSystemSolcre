@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    background-color: #FAFBFF;
+}
+main{
+    display: flex;
+}
+
+.vote-form-img{
+    height: 100vh;
+    width: 40%;
+    background-image: url('https://res.cloudinary.com/dlf8flk1o/image/upload/v1698790105/VotingSystem/claudia-raya-Ol0wJhWu3-s-unsplash_xtllf0.jpg');
+    background-size: cover;
+    background-position: bottom;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.form-container{
+
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column;
+    margin: 0 auto; 
+}
+
+.form-container img{
+    width:300px;
+}
+
+.form-container h1{
+    font-size: 25px;
+    padding: 30px 0px 30px 0px;
+}
+
+.form-container form{
+    width: 400px;
+}
+
+.form-container select{
+    display: block;
+    width: 100%;
+}
+
+.btn-custom{
+    margin-top:20px;
+    width: 100%;
+    background-color: #5932EA;
+}
+

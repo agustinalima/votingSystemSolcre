@@ -2,10 +2,14 @@ const fs = require("fs");
 const path = require("path");
 let db = require("../database/models");
 
+const express = require('express');
+const app = express();
+
+
 
 let mainController = {
   index: function (req, res){
-    res.send('Hola, esta funcionando');
+    res.sendFile('index.html', { root: '../votingSystemSolcre/' });
   },
   
   
