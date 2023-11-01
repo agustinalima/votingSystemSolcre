@@ -1,0 +1,2 @@
+buildCommand: npm install && npm run build  # Comando para construir tu aplicación (ajústalo según tu configuración)
+publicDirectory: ./public  # Directorio público donde están tus archivos estáticos (CSS, JS, etc.)
