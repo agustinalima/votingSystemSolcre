@@ -8,6 +8,8 @@ const mainController = require("../controllers/mainController");
 
 router.get('/', mainController.index);
 
+router.post('/', mainController.checkVoter);
+
 router.get('/api/allCandidates', mainController.allCandidates);
 router.get('/api/allVotes', mainController.allVotes);
 

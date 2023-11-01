@@ -18,19 +18,27 @@
         <img
           src="https://res.cloudinary.com/dlf8flk1o/image/upload/v1698782038/VotingSystem/logo_mh2raj.png"
           alt=""/>
+
         <h1>¡Votá a tu candidato favorito! 😏</h1>
-        <form>
+
+        <form action="/" method="POST">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Documento</label>
               <input type="text" name="document" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <% if (locals.errors && errors.document) { %>
+                <div class="text-danger">
+                  <i class="fa-solid fa-triangle-exclamation"></i> <%= errors.document.msg %>
+                </div>
+              <% } %>
             </div>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select" aria-label="Default select example" name="candidateId">
+              <option selected disabled>Seleccioná tu candidato favorito</option>
+              <% candidates.forEach(function(candidate) { %>
+                <option value="<%= candidate.id %>"><%= candidate.name %> <%= candidate.lastName %></option>
+            <% }); %>
             </select>
             <button type="submit" class="btn btn-primary btn-custom">Enviar Voto</button>
+
           </form>
 
       </div>
