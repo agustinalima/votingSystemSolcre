@@ -16,7 +16,6 @@ let mainController = {
     }
   },
 
-  // APIs //
   allCandidates: (req, res) => {
     db.Voter.findAll()
       .then((voters) => {
@@ -107,6 +106,24 @@ let mainController = {
         res.status(500).json({ message: "Error interno del servidor" });
       });
   },
+
+  admin: (req, res) => {
+    db.Admin.findAll()
+      .then((admin) => {
+        return res.json({
+          data: {
+            admins: admin.map((admin) => ({
+              email: admin.email,
+              password: admin.password,
+            })),
+          },
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ message: "Error interno del servidor" });
+      });
+  }
 };
 
 module.exports = mainController;
